@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="addOption" class="com.amber.spring.aspectj.AddOption"></bean>
+    <bean id="roomDao" class="com.amber.spring.dao.RoomDao"></bean>
+
+    <!--重点配置aop-->
+    <aop:config>
+        <!--配置切入点execution()是表达式-->
+        <aop:pointcut expression="execution(* com.amber.spring.dao.RoomDao.save(..))" id="pointcut1"></aop:pointcut>
+        <!--配置且面-->
+        <aop:aspect ref="addOption">
+            <!--在切入点之前增强-->
+            <aop:before method="addSave" pointcut-ref="pointcut1"></aop:before>
+            <!--后置通知-->
+            <aop:after-returning method="addAfterReturn" pointcut-ref="pointcut1" returning="result"></aop:after-returning>
+            <!--环绕通知-->
+            <aop:around method="addAround" pointcut-ref="pointcut1"></aop:around>
+            <!--异常通知-->
+            <aop:after-throwing method="addAfterThrowing" pointcut-ref="pointcut1" throwing="e"></aop:after-throwing>
+            <!--在切入点之后增强-->
+            <aop:after method="addAfter" pointcut-ref="pointcut1"></aop:after>
+        </aop:aspect>
+    </aop:config>
+</beans>
+   
