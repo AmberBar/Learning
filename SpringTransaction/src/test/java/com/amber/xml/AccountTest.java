@@ -1,4 +1,4 @@
-package com.amber;
+package com.amber.xml;
 
 import com.amber.xml.service.AccountService;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:applicationContext_xml.xml")
+@ContextConfiguration("classpath:tx_xml.xml")
 public class AccountTest {
     @Autowired
     AccountService accountService;
