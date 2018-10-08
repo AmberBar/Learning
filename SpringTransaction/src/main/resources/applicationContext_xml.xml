@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+">
+
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="accountDao" class="com.amber.xml.dao.AccountDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate" />
+    </bean>
+    <bean id="accountService" class="com.amber.xml.service.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao" />
+     </bean>
+
+    <!--配置c3p0数据库连接池-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driverClassName}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--配置jdbcTemplate-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--配置事务管理器-->
+    <bean id="trancationManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" >
+        <property name="dataSource" ref="dataSource" ></property>
+    </bean>
+
+    <!--配置事务增强-->
+    <tx:advice id="myAdvice" transaction-manager="trancationManager">
+        <tx:attributes>
+            <!--<tx:method name="save*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>-->
+            <!--<tx:method name="update*" propagation="REQUIRED"/>-->
+            <!--<tx:method name="delete*" propagation="REQUIRED"/>-->
+            <!--<tx:method name="find*" read-only="true"/>-->
+            <tx:method name="*" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut id="ponitcut" expression="execution(* com.amber.xml.service.AccountServiceImpl.transferMoney(..))"></aop:pointcut>
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="ponitcut" />
+    </aop:config>
+</beans>
