@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- <mapper namespace="test">  -->
+<mapper namespace="com.amber.mapper.UserMapper">
+	
+	<!-- where可以省略第一个前and -->
+	<select id="findUsersByUsernameAndSex" parameterType="User" resultType="User">
+		select * from user
+		<where>
+			<if test="sex != null and sex != ''">
+				sex = #{sex}
+			</if>
+			<if test="username != null and username != ''" >
+				and username like "%"#{username}"%"
+			</if>
+		</where>
+	</select>
+	<select id="findUserById" parameterType="Integer" resultType="com.amber.po.User">
+		select * from user where id = #{id}
+	</select>
+	
+	<!-- foreach可以遍历对象中的集合，数组 -->
+	<select id="findUserByUserId" parameterType="com.amber.vo.QueryVo" resultType="User">
+		select * from user
+		where id in
+		<foreach collection="ids" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</select>
+	<select id="findUserQuzyByusername" parameterType="String" resultType="com.amber.po.User">
+		select * from user where username like '%${value}%'
+	</select>
+	
+
+	<insert id="insertUser" parameterType="com.amber.po.User" >
+		<selectKey keyProperty="id" resultType="Integer">
+			Select Last_insert_id()
+		</selectKey>
+		insert into user(username, birthday, sex, address) value(#{username}, #{birthday}, #{sex}, #{address})
+	</insert>
+	
+	<update id="updateUser" parameterType="com.amber.po.User">
+		update user set username=#{username} where id = #{id}
+	</update>
+	
+	<delete id="deleteUserById" parameterType="Integer" >
+		delete from user where id = #{id}
+	</delete>
+</mapper>
