@@ -18,8 +18,18 @@ public class Orders  implements Serializable{
     private Date createtime;
 
     private String note;
+    
+    private User user;
 
-    public Integer getId() {
+    public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -62,7 +72,9 @@ public class Orders  implements Serializable{
 	@Override
 	public String toString() {
 		return "Orders [id=" + id + ", userId=" + userId + ", number=" + number + ", createtime=" + createtime
-				+ ", note=" + note + "]";
+				+ ", note=" + note + ", user=" + user + "]";
 	}
+
+	
     
 }

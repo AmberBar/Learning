@@ -5,6 +5,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- <mapper namespace="test">  -->
 <mapper namespace="com.amber.mapper.UserMapper">
+
+	<resultMap type="User" id="userResults">
+		<id column="id" property="id"/>
+		<result column="username" property="username"/>
+		<result column="sex" property="sex"/>
+		<result column="birthday" property="birthday"/>
+		<result column="address" property="address"/>
+		<!-- 一对多关联查询 -->
+		<collection property="orders" ofType="orders">
+			<id column="id" property="id"/>
+			<result column="number"  property="number"/>	
+			<result column="note"  property="note"/>
+			<result column="createtime"  property="createtime"/>
+			<result column="user_id" property="userId"/>
+		</collection>
+	</resultMap>
+
+	<select id="userResults" resultMap="userResults">
+			select 
+			o.id,
+			o.user_id,
+			o.number,
+			o.createTime, 
+			o.note,
+			u.username,
+			u.id,
+			u.sex,
+			u.birthday,
+			u.address
+			from  user u
+			left join  orders o 
+			on o.user_id = u.id; 
+	</select>
 	
 	<!-- where可以省略第一个前and -->
 	<select id="findUsersByUsernameAndSex" parameterType="User" resultType="User">
@@ -26,7 +59,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findUserByUserId" parameterType="com.amber.vo.QueryVo" resultType="User">
 		select * from user
 		where id in
-		<foreach collection="ids" item="id" open="(" close=")" separator=",">
+		<!-- <foreach collection="ids" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach> -->
+		<!-- <foreach collection="array" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach> -->
+		<foreach collection="list" item="id" open="(" close=")" separator=",">
 			#{id}
 		</foreach>
 	</select>

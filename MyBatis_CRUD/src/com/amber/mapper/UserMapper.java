@@ -2,6 +2,7 @@ package com.amber.mapper;
 
 import java.util.List;
 
+import com.amber.po.Orders;
 import com.amber.po.User;
 import com.amber.vo.QueryVo;
 
@@ -13,5 +14,9 @@ public interface UserMapper {
 	
 	List<User> findUsersByUsernameAndSex(User user);
 	
-	List<User> findUserByUserId(QueryVo queryVo);
+//	List<User> findUserByUserId(QueryVo queryVo);
+//	List<User> findUserByUserId(Integer[] ids);
+	List<User> findUserByUserId(List<Integer> ids);
+	
+	List<User> userResults();
 }

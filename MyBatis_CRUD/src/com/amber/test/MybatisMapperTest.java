@@ -4,6 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -14,6 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.amber.mapper.UserMapper;
+import com.amber.po.Orders;
 import com.amber.po.User;
 import com.amber.vo.QueryVo;
 
@@ -27,16 +29,54 @@ public class MybatisMapperTest {
 	}
 	
 	@Test
-	public void findUsers() {
+	public void selectOrderByUser() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+		List<User> users = mapper.userResults();
+		for (User user : users) {
+			System.out.println(user);
+		}
+	}
+	
+	@Test
+	public void findUsersByList() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+		QueryVo queryVo = new QueryVo();
+		List<Integer> ids = new ArrayList<>();
+		ids.add(10);
+		ids.add(48);
+		ids.add(25);
+		List<User> users = mapper.findUserByUserId(ids);
+		for (User user2 : users) {
+			System.out.println(user2);
+		}
+	}
+	
+	@Test
+	public void findUsersByInteger() {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 		QueryVo queryVo = new QueryVo();
 		Integer[] ids = {10, 48, 25};
 		queryVo.setIds(ids);
-		List<User> users = mapper.findUserByUserId(queryVo);
-		for (User user2 : users) {
-			System.out.println(user2);
-		}
+//		List<User> users = mapper.findUserByUserId(ids);
+//		for (User user2 : users) {
+//			System.out.println(user2);
+//		}
+	}
+	
+	@Test
+	public void findUsers() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+		QueryVo queryVo = new QueryVo();
+		Integer[] ids = {10, 48, 25};
+//		queryVo.setIds(ids);
+//		List<User> users = mapper.findUserByUserId(queryVo);
+//		for (User user2 : users) {
+//			System.out.println(user2);
+//		}
 	}
 	
 	@Test
