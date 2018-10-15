@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.amber.mapper.OrdersMapper;
+import com.amber.mapper.UserMapper;
 import com.amber.po.Orders;
 
 public class MybatisMapperOrdersTest {
@@ -24,6 +25,16 @@ public class MybatisMapperOrdersTest {
 	public void Before() throws IOException {
 		InputStream is = Resources.getResourceAsStream("SqlMapConfig.xml");
 		sqlSessionFactory =  new SqlSessionFactoryBuilder().build(is);
+	}
+	
+	@Test
+	public void selectOrders() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		OrdersMapper ordersMapper =  sqlSession.getMapper(OrdersMapper.class);
+		List<Orders> orders =  ordersMapper.selectOrders();
+		for (Orders orders2 : orders) {
+			System.out.println(orders2);
+		}
 	}
 	
 	@Test
