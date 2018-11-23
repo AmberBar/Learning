@@ -10,6 +10,11 @@ public class ExcelController {
     @Autowired
     ExcelService excelService;
 
+    @GetMapping("/users")
+    public void user() throws Exception{
+        excelService.exportUsers();
+    }
+
     @PostMapping("/users")
     public void user(@RequestParam("file") String filePath) {
         excelService.importUsers(filePath);
