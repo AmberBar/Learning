@@ -2,7 +2,9 @@ package com.amber.login;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.subject.Subject;
@@ -30,13 +32,13 @@ public class LoginDemo {
             subject.login(usernamePasswordToken);
             //判断是否通过验证，true代表通过验证
             if (subject.isAuthenticated()) {
-                System.out.println("login success");
-            } else {
-                System.out.println("login failed");
+                logger.info("login successful");
             }
             subject.logout();
+        } catch (UnknownAccountException e) {
+            logger.error("ERROR incorrect username or passwod", e);
         } catch (AuthenticationException e) {
-            e.printStackTrace();
+            logger.error("login failed", e);
         }
     }
 }
