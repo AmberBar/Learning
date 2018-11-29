@@ -1,10 +1,13 @@
 package com.amber;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class ShiroSpringBootApplication {
 
     public static void main(String[] args) {
-        SpringB
+        SpringApplication.run(ShiroSpringBootApplication.class, args);
     }
 }
 
