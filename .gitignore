@@ -1,2 +1,5 @@
 *.class
 *.iml
+.idea/
+zookeeper/zookeeper-demo/.idea/
+.idea/modules.xml
