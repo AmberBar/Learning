@@ -5,9 +5,6 @@ import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
 
-/**
- * watch more
- */
 public class ZookeeperWatchDemo {
     private ZooKeeper zookeeper;
     private String oldValue = "";
