@@ -6,9 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @EnableDubbo
 @SpringBootApplication
-public class Application {
+public class ApplicationConsumer {
 
-    public static void main(String[] args){
-        SpringApplication.run(Application.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(ApplicationConsumer.class,args);
     }
+
 }
