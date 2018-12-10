@@ -3,6 +3,7 @@ package com.amber.controller;
 
 import com.amber.bean.Dept;
 import com.amber.service.DeptService;
+import com.netflix.discovery.DiscoveryClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
