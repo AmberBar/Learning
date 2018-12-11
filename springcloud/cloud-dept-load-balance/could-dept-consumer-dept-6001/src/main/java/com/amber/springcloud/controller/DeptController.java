@@ -1,4 +1,4 @@
-package com.amber.controller;
+package com.amber.springcloud.controller;
 
 import com.amber.bean.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
