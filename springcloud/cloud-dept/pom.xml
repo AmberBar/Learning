@@ -12,9 +12,9 @@
         <module>could-dept-api</module>
         <module>could-dept-provide-dept-8001</module>
         <module>could-dept-eureka-7001</module>
-        <!--<module>could-dept-eureka-7002</module>-->
         <module>could-dept-eureka-7003</module>
         <module>could-dept-consumer-dept-80</module>
+        <module>could-dept-eureka-7022</module>
     </modules>
 
     <parent>
