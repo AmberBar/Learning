@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>could-dept-provide-8002</artifactId>
+    <artifactId>cloud-dept-provider-8003</artifactId>
     <properties>
         <maven.complier.target>1.8</maven.complier.target>
         <maven.complier.source>1.8</maven.complier.source>

@@ -1,12 +1,12 @@
 package com.amber.service;
 
-import com.amber.bean.Dept;
+import com.amber.springcloud.bean.Dept;
 
 import java.util.List;
 
 public interface DeptService {
 
-    Dept get(Integer id);
+    Dept get(Integer id) throws Exception;
 
     List<Dept> list();
 

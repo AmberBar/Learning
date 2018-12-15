@@ -1,4 +1,4 @@
-package com.amber.bean;
+package com.amber.springcloud.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,6 @@ public class Dept implements Serializable {
     private static final long serialVersionUID = 1713101692353359948L;
     @Id
     @GeneratedValue
-
     private Integer id;
     private String deptName;
     private String dbSource;

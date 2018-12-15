@@ -1,12 +1,12 @@
 package com.amber.springcloud.controller;
 
-import com.amber.bean.Dept;
+import com.amber.springcloud.service.DeptClientService;
+import com.amber.springcloud.bean.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -17,29 +17,26 @@ import java.util.List;
 @RequestMapping("/consumer/dept")
 public class DeptController {
 
-//    private  static final  String REST_URL_PREFIX="http://localhost:8001";
-    //换成微服务前面的名字
-    private static final String REST_URL_PREFIX = "http://COULD-DEPT-PROVIDE-DEPT";
     @Autowired
-    RestTemplate restTemplate;
+    DeptClientService deptService;
 
     @PostMapping("")
-    public void add(Dept dept){
-        restTemplate.postForObject(REST_URL_PREFIX + "/dept", dept, Dept.class);
+    public Dept add(Dept dept){
+        return deptService.add(dept);
     }
 
 
     @RequestMapping(value = "/{id}")
-    public Dept get(@PathVariable("id") Long id)
+    public Dept get(@PathVariable("id") Integer id)
     {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/" + id, Dept.class);
+        return deptService.get(id);
     }
 
     @SuppressWarnings("unchecked")
     @RequestMapping(value = "")
     public List<Dept> list()
     {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept", List.class);
+        return deptService.list();
     }
 
 }
