@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d550606-f104-4195-b088-56f95ce244d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo_02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/amber/Lock/JoinDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/Clert.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/Clert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/ProductConsumerDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/ProductConsumerDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/Clert_02.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/Clert_02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/LockConditionDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JUC-Demo/com/amber/Lock/LockConditionDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amber/Lock/LockConditionDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amber/Lock/LockConditionDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo_02.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,22 +27,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="6" />
+          <entry key="java" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="6" />
+          <entry key="JAVA" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2484" />
+          <entry key="java" value="3463" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2484" />
+          <entry key="JAVA" value="3463" />
         </counts>
       </usages-collector>
     </session>
@@ -84,8 +85,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/LockConditionDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+            <state relative-caret-position="283">
+              <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/JoinDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -99,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo_02.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+            <state relative-caret-position="299">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1446#1447#0" expanded="true" />
@@ -135,17 +148,18 @@
         <option value="$PROJECT_DIR$/src/com/amber/Lock/LockDemo.java" />
         <option value="$PROJECT_DIR$/src/com/amber/ReadWriteLock/ReadAndWriteLockDemo.java" />
         <option value="$PROJECT_DIR$/src/com/amber/ReadWriteLock/ReadWriteLockDemo.java" />
-        <option value="$PROJECT_DIR$/src/com/amber/Lock/LockConditionDemo.java" />
         <option value="$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo.java" />
         <option value="$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo_02.java" />
+        <option value="$PROJECT_DIR$/src/com/amber/Lock/LockConditionDemo.java" />
+        <option value="$PROJECT_DIR$/src/com/amber/Lock/JoinDemo.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="582" />
-    <option name="y" value="47" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="192" />
+    <option name="y" value="16" />
     <option name="width" value="1297" />
-    <option name="height" value="672" />
+    <option name="height" value="700" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -189,24 +203,6 @@
             <path>
               <item name="JUC-Demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="JUC-Demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="amber" type="462c0819:PsiDirectoryNode" />
-              <item name="Lock" type="462c0819:PsiDirectoryNode" />
-              <item name="ProductConsumerDemo.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="JUC-Demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JUC-Demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="amber" type="462c0819:PsiDirectoryNode" />
-              <item name="Lock" type="462c0819:PsiDirectoryNode" />
-              <item name="ProductConsumerDemo_02.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="JUC-Demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JUC-Demo" type="462c0819:PsiDirectoryNode" />
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -218,7 +214,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545483222718" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545484804524" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -236,13 +232,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ProductConsumerDemo_02">
-    <configuration name="CountDownLatchDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.amber.CountDownLatch.CountDownLatchDemo" />
+  <component name="RunManager" selected="Application.JoinDemo">
+    <configuration name="JoinDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.amber.Lock.JoinDemo" />
       <module name="JUC-Demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.amber.CountDownLatch.*" />
+          <option name="PATTERN" value="com.amber.Lock.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -250,8 +246,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LockDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.amber.Lock.LockDemo" />
+    <configuration name="LockConditionDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.amber.Lock.LockConditionDemo" />
       <module name="JUC-Demo" />
       <extension name="coverage">
         <pattern>
@@ -303,19 +299,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CountDownLatchDemo" />
-      <item itemvalue="Application.LockDemo" />
       <item itemvalue="Application.ReadWriteLockDemo" />
       <item itemvalue="Application.ProductConsumerDemo" />
       <item itemvalue="Application.ProductConsumerDemo_02" />
+      <item itemvalue="Application.LockConditionDemo" />
+      <item itemvalue="Application.JoinDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JoinDemo" />
+        <item itemvalue="Application.LockConditionDemo" />
         <item itemvalue="Application.ProductConsumerDemo_02" />
         <item itemvalue="Application.ProductConsumerDemo" />
         <item itemvalue="Application.ReadWriteLockDemo" />
-        <item itemvalue="Application.LockDemo" />
-        <item itemvalue="Application.CountDownLatchDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -341,7 +337,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29960158" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26454183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
@@ -349,7 +345,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22981367" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25310558" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39906833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,13 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/LockConditionDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/LockDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -411,8 +400,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/ProductConsumerDemo_02.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        <state relative-caret-position="299">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1446#1447#0" expanded="true" />
@@ -420,6 +409,23 @@
             <element signature="e#1702#1703#0" expanded="true" />
             <element signature="e#1736#1737#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/LockConditionDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/amber/Lock/JoinDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
         </state>
       </provider>
     </entry>

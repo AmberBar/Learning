@@ -37,6 +37,7 @@ class Clert_02 {
                     e.printStackTrace();
                 }
             }
+
             System.out.println( Thread.currentThread().getName() + "===product===" + ++num);
             condition_1.signalAll();
         } finally {
