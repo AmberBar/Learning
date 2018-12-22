@@ -1,8 +1,10 @@
-package com.amber;
+package com.amber.CountDownLatch;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
+/**
+ * 等待其他线程全部执行完毕后，再执行
+ */
 public class CountDownLatchDemo {
 
     public static void main(String[] args) throws InterruptedException{
