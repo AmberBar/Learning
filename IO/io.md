@@ -25,6 +25,13 @@
 节点流: FileInputStream, FileOutputStream,FileReader,FileWriter<br>
 处理流: 缓冲流就是处理流的一种(BufferedInputStream,BufferedOutputStram,BufferReader,BufferWriter)<br>
 
+### 处理流
+转换流也是处理流的一种
+InputStreamReader: 可以把字节流转化成字符流
+OutputStreamWriter： 可以把字符流转化成字节流
+标准的输入输出流
+System.in
+System.out
 ## File
 * java.io.file
 * File file = new File(XXX);<br>
