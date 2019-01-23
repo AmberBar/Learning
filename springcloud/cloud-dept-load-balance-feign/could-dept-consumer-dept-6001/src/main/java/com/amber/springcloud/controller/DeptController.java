@@ -1,7 +1,7 @@
 package com.amber.springcloud.controller;
 
-import com.amber.springcloud.service.DeptClientService;
-import com.amber.springcloud.bean.Dept;
+import com.amber.bean.Dept;
+import com.amber.springcloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,11 +18,11 @@ import java.util.List;
 public class DeptController {
 
     @Autowired
-    DeptClientService deptService;
+    DeptService deptService;
 
     @PostMapping("")
     public Dept add(Dept dept){
-        return deptService.add(dept);
+         return deptService.add(dept);
     }
 
 
@@ -40,3 +40,4 @@ public class DeptController {
     }
 
 }
+

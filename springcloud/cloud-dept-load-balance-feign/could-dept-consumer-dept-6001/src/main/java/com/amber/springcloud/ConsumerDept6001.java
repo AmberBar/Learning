@@ -5,12 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.cloud.openfeign.FeignClient;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableEurekaClient
-@EnableFeignClients(basePackages= {"com.amber.springcloud"})
-@ComponentScan("com.amber.springcloud")
+@EnableFeignClients
 public class ConsumerDept6001 {
 
     public static void main(String[] args){
