@@ -1,0 +1,13 @@
+## spring整合kafka
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+#    发送消息失败的重试次数
+    producer:
+      retries: 0
+      batch-size: 16384 # 批量发送数据的配置
+      #      设置kafka生产者缓存区的大小（32M）
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: 0 # 超级重要的一个配置
