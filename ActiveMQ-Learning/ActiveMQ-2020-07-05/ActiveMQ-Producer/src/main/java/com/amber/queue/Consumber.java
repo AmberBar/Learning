@@ -1,4 +1,4 @@
-package com.amber.init1;
+package com.amber.queue;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 

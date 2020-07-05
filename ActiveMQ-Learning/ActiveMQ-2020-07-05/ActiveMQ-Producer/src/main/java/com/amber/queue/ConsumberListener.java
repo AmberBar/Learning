@@ -1,6 +1,5 @@
-package com.amber.init1;
+package com.amber.queue;
 
-import lombok.SneakyThrows;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
@@ -20,15 +19,26 @@ public class ConsumberListener {
 
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         MessageConsumer consumer = session.createConsumer(session.createQueue(QUEUE_NAME));
-        consumer.setMessageListener(new MessageListener() {
+//        consumer.setMessageListener(new MessageListener() {
+//
+//            @SneakyThrows
+//            @Override
+//            public void onMessage(Message message) {
+//                TextMessage textMessage = (TextMessage) message;
+//                String text = textMessage.getText();
+//                System.out.println("消费者.... " + text);
+//            }
+//        });
 
-            @SneakyThrows
-            @Override
-            public void onMessage(Message message) {
-                TextMessage textMessage = (TextMessage) message;
-                String text = textMessage.getText();
-                System.out.println("消费者.... " + text);
+        consumer.setMessageListener((Message message)-> {
+            TextMessage textMessage = (TextMessage) message;
+            String text = null;
+            try {
+                text = textMessage.getText();
+            } catch (JMSException e) {
+                e.printStackTrace();
             }
+            System.out.println("消费者.... " + text);
         });
 
         System.in.read();

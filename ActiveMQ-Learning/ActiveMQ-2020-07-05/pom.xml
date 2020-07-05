@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ActiveMQ-Producer</module>
+        <module>SpringBoot-ActiveMQ</module>
+        <module>SpringBoot-One2One-O2M</module>
     </modules>
 
 
